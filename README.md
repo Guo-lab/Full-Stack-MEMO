@@ -1,3 +1,3 @@
 # Full-Stack-SQ
 
-### a full-fledged application MEMORIES
+### A full-fledged application MEMORIES
