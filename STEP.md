@@ -49,5 +49,29 @@ Create Controller folder to make the whole backend application stable
 #
 # STEP 4
 ## In Server
-Create a new folder [models]
+Create a new folder [models]  
+Create mongoose model in postMessage.js
+
+#
+# STEP 5
+## In Server
+Add more routes into the controller/posts.js  
+Finish getPosts logic  
+Finish createPost logic and move on to the front-end side to create a form  
+
+**THEN, focus more on client and logic for sending and creating posts**
+
+#
+# STEP 6 
+## Create a whole skeleton for the front-end application
+`npm install @material-ui/core`  
+
+
+Then, create 2 components  
+In Posts folder, Post folder turns medium one to large applications (If only one component uses some other component)  
+
+#
+# STEP 7
+Start App.js
+
 

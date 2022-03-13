@@ -8,7 +8,7 @@ const router = express.Router();
 
 
 //! Make this file clear
-import { getPosts } from '../controller/posts.js'
+import { getPosts, createPost} from '../controller/posts.js'
 
 // 
 //! always have request and response
@@ -17,6 +17,7 @@ import { getPosts } from '../controller/posts.js'
 });
 */
 router.get('/', getPosts);
+router.post('/', createPost);
 
 
 
