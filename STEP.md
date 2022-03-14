@@ -72,6 +72,40 @@ In Posts folder, Post folder turns medium one to large applications (If only one
 
 #
 # STEP 7
-Start App.js
+## Start with App.js  
+import from material-ui/core  and build the basic structure  
 
+Create a images folder
+
+### In App.js  
+Container is to make sure to send everything  
+Grow is to add some simple animation
+
+Some icons Reference:  
+> https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.dc64b3430&cid=39034  
+
+> <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+**In Grid:**   
+xs={12} means on extra small devices TAKE the full width  
+sm={7} means on small or larger devices 7 out of 12 spaces  
+
+2 Grids correspond to Posts and Form
+
+#
+# STEP 8 
+## POSTS POST FORM
+
+#
+# STEP 9
+## Styles
+Get Styles from https://gist.github.com/adrianhajdin/d99aaa67124f0de7667fd3937715fb26  
+
+After Add className with styles => **Much Better**
+
+Same as other three js files [ ALT + Command + C ]
+
+#
+# STEP 10 
+## Start implementing the calls to the api
 
