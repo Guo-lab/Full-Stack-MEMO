@@ -8,8 +8,23 @@ import Form  from './components/Form/Form';
 
 import useStyles from './styles';
 
+// dispatch an action
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
+// used in useEffect()
+import { getPosts } from './actions/posts';
+
 const App = () => {
     const classes = useStyles(); 
+    const dispatch = useDispatch();
+
+    // ? UPDATE
+    useEffect(() => {
+        //* In actions/posts.js
+        dispatch(getPosts());
+        //* To reducers/posts.js
+    }, [dispatch]);
 
     return(
         ////<div>
@@ -25,7 +40,7 @@ const App = () => {
 
             <Grow in >
                 <Container>
-                    <Grid container justify='space-between' alignItems='stretch' spacing={3}>
+                    <Grid container justifyContent='space-between' alignItems='stretch' spacing={3}>
                         <Grid item xs={12} sm={7}>
                             <Posts />
                         </Grid>

@@ -16,18 +16,21 @@ const app = express();
 
 // After routes
 // every route inside the post routes starts with /posts
-app.use('/posts', postRoutes);
+//! routes should be after cors
+////app.use('/posts', postRoutes);
 
 
 
 
 
-// setting up the bodyparser [send requests]
+// setting up the body parser [send requests]
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
 
+
+app.use('/posts', postRoutes);
 
 
 

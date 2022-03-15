@@ -108,4 +108,117 @@ Same as other three js files [ ALT + Command + C ]
 #
 # STEP 10 
 ## Start implementing the calls to the api
+Redux : TO DO all actions towards backend
+## In client/src 
+A new folder api, inside create index.js  
+A new folder actions, inside create posts.js  
+A new folder reducers, inside create posts.js and index.js  
+## In src 
+index.js is where to initialize redux  
+Create store and implement reducers
+
+After Provider Wrapping, be able to use all of its capabilities
+
+#
+# STEP 11
+## In App.js 
+Dispatch getPosts actions
+To simplify Pre-hook [https://www.jianshu.com/p/3382cc765b39], with use of hooks, use redux  
+
+Next, create an action  
+
+Then, export getPosts from actions (folder)  
+
+In actions/posts.js  
+
+`import * as api from '../api'; `  
+`// Action Creators`  
+`const getPosts = () => {`  
+`   const action = { type: 'FETCH_ALL', payload: [] }`  
+`    return action;`
+`}`
+After finishing actions/posts.js, use it in App.js
+
+#
+# STEP 12
+Retrieve the data from within components
+Go to Post component: Posts.js
+## In Posts/Post/Posts.js
+Fetch the data from global redux store
+
+If F12 in console
+
+> Array []
+
+> Network Error
+
+To change this,   
+- in package.json, Add proxy
+- in Server, index.js, Change the order of app.use(routes)
+- `npm start (Server)` and `npm start (client)`
+
+Get 2 Array []  
+First is what I set up in the reducer  
+Second is that is after the data has been fetched  
+**the Get Request works!**  
+
+#
+# STEP 13
+## Form
+To make a post request to database and add new posts  
+## In Form/Form.js
+Pay attention:  
+`onChange={(e) => setPostData({ creator: e.target.value })}`  
+should spread the post data
+ONLY change the specific property     
+`onChange={(e) => setPostData({ ...postData, creator: e.target.value })}`    
+To learn it, visit
+[mem.dev](https://mem.dev/)  
+
+Form: TextField, FileBase and Button  
+For margin,     
+`<form autoComplete='off' noValidate className={'${classes.root} ${classes.form}'【''->``】} onSubmit={handleSubmit}>`
+
+#
+# STEP 13
+Add a new post into database connected to server
+## client/src/api/index.js
+export createPost 
+## client/src/actions/posts.js
+
+
+
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
+
+#
+# STEP 13
 
