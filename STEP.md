@@ -185,12 +185,64 @@ Add a new post into database connected to server
 ## client/src/api/index.js
 export createPost 
 ## client/src/actions/posts.js
+finish createPost
 
 
+
+
+
+
+---
+***
+***
 
 
 #
-# STEP 13
+# STEP 14
+## In components/Posts/Posts.js
+DO something with posts
+- CircularProgress as a loading spinner 
+- In Grid, posts.map()
+## In components/Posts/Post/Post.js
+- `import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';`
+- `import ThumbUpAction from '@material-ui/icons/ThumbUpAlt';`
+- `import DeleteIcon from '@material-ui/icons/Delete';`
+- `import MoreHorizIcon from '@material-ui/icons/MoreHoriz';`
+
+Hashtag sign #`$`{}  
+
+DONE BUT
+THEN, WARNING and ERROR  
+
+FOR WARNING:
+> https://stackoverflow.com/questions/64319184/failed-prop-type-material-ui-either-children-image-src-or-component  
+
+> https://github.com/mui/material-ui/issues/11702
+
+√
+
+FOR ERROR:
+> https://zh-hans.reactjs.org/warnings/invalid-hook-call-warning.html  
+
+> https://reactnative.dev/docs/upgrading
+
+**X** be not working  
+I find I can provide CodeSandbox in the future
+just like  
+https://codesandbox.io/s/dazzling-cori-p0jj6
+
+Then,
+> https://bryantson.medium.com/reactjs-how-to-handle-invalid-hook-call-warning-uncaught-error-invalid-hook-call-49ca32aa0d14
+
+However, **X** again
+Eventually, Fix it with `npm audit fix --force`...  
+
+√  
+I guess some dependencies had been wrong!  
+
+Then, 
+> Warning: Failed prop type: Material-UI: `fontSize="default"` is deprecated. Use `fontSize="medium"` instead.
+OK
 
 #
 # STEP 13
