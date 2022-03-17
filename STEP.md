@@ -180,7 +180,7 @@ For margin,
 `<form autoComplete='off' noValidate className={'${classes.root} ${classes.form}'【''->``】} onSubmit={handleSubmit}>`
 
 #
-# STEP 13
+# STEP 14
 Add a new post into database connected to server
 ## client/src/api/index.js
 export createPost 
@@ -198,7 +198,7 @@ finish createPost
 
 
 #
-# STEP 14
+# STEP 15
 ## In components/Posts/Posts.js
 DO something with posts
 - CircularProgress as a loading spinner 
@@ -244,8 +244,38 @@ Then,
 > Warning: Failed prop type: Material-UI: `fontSize="default"` is deprecated. Use `fontSize="medium"` instead.
 OK
 
+## A BUG: NO PHOTO
+## In ./client/src/components/Form/Form.js
+√  
+
+Wrong Spelling !
+This is also why I got this warning before.   
+> https://stackoverflow.com/questions/64319184/failed-prop-type-material-ui-either-children-image-src-or-component  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
-# STEP 13
+# STEP 16
 
 #
 # STEP 13

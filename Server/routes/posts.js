@@ -8,7 +8,7 @@ const router = express.Router();
 
 
 //! Make this file clear
-import { getPosts, createPost} from '../controller/posts.js'
+import { getPosts, createPost} from '../controllers/posts.js'
 
 // 
 //! always have request and response
