@@ -11,10 +11,17 @@ import { useSelector } from 'react-redux';
 import { Grid, CircularProgress }  from '@material-ui/core';
 
 
+// After implement the currentId, setCurrentId in App.js
+// Give the param into Form = () => {}
 
-const Posts = () => {
+//* Props drilling
+//<Post post={post} setCurrentId={setCurrentId} />
+//* Redux can solve
+// Now GOTO Post.js
+
+const Posts = ({ setCurrentId }) => {
     // Selector as HOOK
-const posts = useSelector((state) => state.posts); // * in reducers/index.js
+    const posts = useSelector((state) => state.posts); // * in reducers/index.js
 
     const classes = useStyles();
 
@@ -31,7 +38,7 @@ const posts = useSelector((state) => state.posts); // * in reducers/index.js
             <Grid className={classes.container} container alignItems='stretch' spacing={3}>
                 {posts.map((post) => (
                     <Grid key={post._id} item xs={12} sm={6}>
-                        <Post post={post} />
+                        <Post post={post} setCurrentId={setCurrentId} />
                     </Grid>
                 ))}
             </Grid>

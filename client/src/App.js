@@ -15,16 +15,33 @@ import { useEffect } from 'react';
 // used in useEffect()
 import { getPosts } from './actions/posts';
 
+
+
+
+// Use useState hook
+import { useState } from 'react';
+
+
+
+
+
 const App = () => {
     const classes = useStyles(); 
     const dispatch = useDispatch();
+
+    const [currentId, setCurrentId] = useState(null);
+
+
 
     // ? UPDATE
     useEffect(() => {
         //* In actions/posts.js
         dispatch(getPosts());
         //* To reducers/posts.js
-    }, [dispatch]);
+    }, [currentId, dispatch]);
+    // Once changing ID (eg. in clear() of Form.js, dispatch the getPosts())
+
+
 
     return(
         ////<div>
@@ -41,12 +58,15 @@ const App = () => {
             <Grow in >
                 <Container>
                     <Grid container justifyContent='space-between' alignItems='stretch' spacing={3}>
+                        
                         <Grid item xs={12} sm={7}>
-                            <Posts />
+                            <Posts setCurrentId={setCurrentId} />
                         </Grid>
+                        
                         <Grid item xs={12} sm={4}>
-                            <Form />
+                            <Form currentId={currentId} setCurrentId={setCurrentId} />
                         </Grid>
+                    
                     </Grid>
                 </Container>
             </Grow>

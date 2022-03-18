@@ -272,12 +272,68 @@ This is also why I got this warning before.
 
 
 
-
-
 #
 # STEP 16
+## In client/src 
+Create index.css for SVG bg
+> https://www.svgbackgrounds.com/
+
+
+
 
 #
+# STEP 17
+Update Load
+## In Server/routes/posts.js
+patch() for updating  
+and 
+## In controllers/posts.js
+finish the logic for updatePost
+
+#
+# STEP 18
+## For client side
+## TO components 
+- Form (where we deal with the update logic)
+- Get the current id of the post we're on
+
+- '... is under the post component'
+- Posts/Post/Post.js and App.js
+
+> Why in App.js? Because of sharing of current id between the posts and the form AND App.js is ONLY the parent to both Posts and Form
+
+> Without redux, we send over to both components
+- After fixing both Post and Posts and Form
+- GOTO reducers to fix reducers/posts.js
+
+
+#
+# STEP 19
+Update the fields o the Form  
+We want the data with values already in there 
+## Form/Form.js
+Fetch a new post  
+With Selector and UseEffect to populate the values  
+(REFRESH the page)
+
+#
+# STEP 20
+Also, after updating the post, initiate another getPost request
+1. Creating -> Editing
+2. Click SUBMIT, then, clear all the inputs -> CLEAR function in Form.js
+Now, after editing, refresh the page and then the post is going to change  
+However, emptying values, immediately reset posts ! NO NEED to refresh actually  
+So In **App.js** change useEffect()  
+
+Let show TITLE
+
+Now a new BUG: without importing **mongoose** in controllers/posts.js and without updating **{ ...post, _id }**
+
+- Wait, a small delay about several seconds
+# TIPS : Console log error instead of error.message to get more information  
+
+
+
 # STEP 13
 
 #
@@ -292,15 +348,8 @@ This is also why I got this warning before.
 #
 # STEP 13
 
-#
-# STEP 13
 
-#
-# STEP 13
 
-#
-# STEP 13
-
-#
-# STEP 13
-
+Plus, I found this: 
+> https://www.freemote.com/watch-strategy-funnel
+Actually, I just had one experience to make website to meet the need of business. A POINT to IMPROVE !

@@ -1,3 +1,5 @@
+import { CallToActionSharp } from "@material-ui/icons";
+
 // state is an array
 export default (posts = [], action) => {
     
@@ -10,6 +12,11 @@ export default (posts = [], action) => {
             ////return posts;
             // send over an array of posts
             return [...posts, action.payload];
+        
+        case 'UPDATE': 
+            // array.map() is an array 
+            // a ternary expression
+            return posts.map((post) => post._id == action.payload._id ? action.payload : post);
              
         default:
             return posts;

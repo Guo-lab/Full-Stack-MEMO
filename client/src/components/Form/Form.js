@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import useStyles from './styles';
 
@@ -11,12 +11,37 @@ import FileBase from 'react-file-base64';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/posts';
 
-const Form = () => {
+
+
+// After Update Post in the Server side
+//* GET THE CURRENT ID
+// After implement the currentId, setCurrentId in App.js
+// Give the params into Form = () => {}
+
+// When receiving the change of currentId from Post.js
+// Add "if" in handleSubmit()
+import { updatePost } from '../../actions/posts';
+// Then GOTO actions and api (actions use it)
+
+
+
+
+// fetch a new post
+// For Give previous values to Form
+import { useSelector } from 'react-redux';
+
+
+
+const Form = ({ currentId, setCurrentId }) => {
+
     const classes = useStyles(); 
 
     const [postData, setPostData] = useState({
         creator: '', title: '', message: {}, tags: '', selectFile: ''
     });
+
+
+
 
     const dispatch = useDispatch();
 
@@ -25,20 +50,56 @@ const Form = () => {
         // send over a post request with all the data that user typed in
         e.preventDefault();
 
-        dispatch(createPost(postData));
+        if(currentId) {
+            // not null dispatch sth different
+            dispatch(updatePost(currentId, postData));
+            clear();
+        }
+        else {
+            dispatch(createPost(postData));
+            clear();
+        }
     } 
     //* Then, GOTO the reducers/posts.js
 
-    const clear = () => {
 
+
+
+
+    //* in reducers/index.js
+    // return one singular thing
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id == currentId) : null); 
+    // with a callback function and a dependency array
+    // what functions should be run when what changes
+    useEffect(() => {
+        if(post) 
+            setPostData(post);
+    }, [post]);
+
+
+
+
+    // Click SUBMIT, then, clear all the inputs
+    const clear = () => {
+        setCurrentId(null);
+        setPostData({
+            creator: '', title: '', message: {}, tags: '', selectFile: ''
+        });
     }
+    // Also should be called after Click SUBMIT
+    //! ALT edit at the same time
+
+
+
 
     return(
         ////<h1>FORM</h1>
         <Paper className={classes.paper}>
             <form autoComplete='off' noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 
-                <Typography variant='h6'>Creating a Memory</Typography>
+                <Typography variant='h6'>
+                    {currentId ? 'Editing' : 'Creating'} a MEMO
+                </Typography>
                 
                 <TextField name='creator' 
                         variant='outlined' 

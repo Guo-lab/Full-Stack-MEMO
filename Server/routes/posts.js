@@ -8,7 +8,7 @@ const router = express.Router();
 
 
 //! Make this file clear
-import { getPosts, createPost} from '../controllers/posts.js'
+import { getPosts, createPost, updatePost } from '../controllers/posts.js'
 
 // 
 //! always have request and response
@@ -19,6 +19,9 @@ import { getPosts, createPost} from '../controllers/posts.js'
 router.get('/', getPosts);
 router.post('/', createPost);
 
+// id [be dynamic]
+router.patch('/:id', updatePost);
+// import that from the controllers
 
 
 

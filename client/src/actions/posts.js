@@ -41,3 +41,27 @@ export const createPost = (post) => async (dispatch) => {
         console.log(error.message);
     }
 }
+
+
+
+
+
+
+
+
+export const updatePost = (id, post) => async (dispatch) => {
+    
+    try {
+        //* making the api request to update the post
+        const { data } = await api.updatePost(id, post); //*  return updated memory or the post // destructure the response
+
+        dispatch({ type: 'UPDATE', payload: data });
+        // Then, GOTO reducers to fix type !
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+// % redux
+// % have actions types set as constants and then import them  in these files
+// % √

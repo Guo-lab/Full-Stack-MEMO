@@ -10,11 +10,20 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 import moment from 'moment';
 
+
+
+
+
 //# Get post using in Card
 // destructure the props
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     
+    // The edit Button
+    // in MoreHorizonIcon 
+
+    // After props drilling we can do with onClick()
+    // Changes happen here and in Posts.js and App.js
     return(
         ////<h1>POST</h1>
         <Card className={classes.card}>
@@ -28,7 +37,10 @@ const Post = ({ post }) => {
 
 
             <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={() => {}}>
+                <Button 
+                    style={{color: 'white'}} 
+                    size="small" 
+                    onClick={() => setCurrentId(post._id) }>
                     <MoreHorizIcon fontSize="medium" />
                 </Button>
             </div>
@@ -38,9 +50,10 @@ const Post = ({ post }) => {
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>         
             </div>
             
-
+            <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>     
+            
             <CardContent>
-                <Typography className={classes.title} variant="h5" gutterBottom>{post.message}</Typography>     
+                <Typography variant="h5" gutterBottom>{post.message}</Typography>     
             </CardContent>
 
 

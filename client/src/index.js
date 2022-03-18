@@ -9,8 +9,15 @@ import thunk from 'redux-thunk';
 
 import reducers from './reducers'; 
 
-
+// At First
 import App from './App';
+
+
+// After components, Forms, Posts, Post
+// For SVG bg
+import './index.css';
+
+
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 // After create store, wrap application with a provider component
