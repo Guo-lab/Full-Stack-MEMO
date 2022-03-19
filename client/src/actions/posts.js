@@ -65,3 +65,23 @@ export const updatePost = (id, post) => async (dispatch) => {
 // % redux
 // % have actions types set as constants and then import them  in these files
 // % √
+
+
+
+
+
+
+
+export const deletePost = (id) => async (dispatch) => {
+    
+    try {
+        //* no need to pass any data
+        await api.deletePost(id); 
+        // no need to response
+        dispatch({ type: 'DELETE', payload: id });
+        // Then, GOTO reducers to fix type !
+        
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -8,12 +8,12 @@ const router = express.Router();
 
 
 //! Make this file clear
-import { getPosts, createPost, updatePost } from '../controllers/posts.js'
+import { getPosts, createPost, updatePost, deletePost } from '../controllers/posts.js'
 
 // 
 //! always have request and response
 /*router.get('/', (req, res) => {
-    res.send('THIS WWORKS!');
+    res.send('THIS WORKS!');
 });
 */
 router.get('/', getPosts);
@@ -22,6 +22,8 @@ router.post('/', createPost);
 // id [be dynamic]
 router.patch('/:id', updatePost);
 // import that from the controllers
+
+router.delete('/:id', deletePost);
 
 
 

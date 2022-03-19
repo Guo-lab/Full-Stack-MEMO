@@ -11,7 +11,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
 
-
+import { useDispatch } from 'react-redux';
+import { deletePost } from '../../../actions/posts';
 
 
 //# Get post using in Card
@@ -19,11 +20,16 @@ import moment from 'moment';
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     
-    // The edit Button
+    //* The edit Button
     // in MoreHorizonIcon 
 
     // After props drilling we can do with onClick()
     // Changes happen here and in Posts.js and App.js
+
+    //* Delete
+    // hook useDispatch
+    const dispatch = useDispatch();
+
     return(
         ////<h1>POST</h1>
         <Card className={classes.card}>
@@ -64,7 +70,8 @@ const Post = ({ post, setCurrentId }) => {
                     Like
                     {post.likeCount}
                 </Button>
-                <Button size="small" color="primary" onClick={() => {}}>
+
+                <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small" />
                     Delete
                 </Button>

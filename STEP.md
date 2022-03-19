@@ -330,14 +330,40 @@ Let show TITLE
 Now a new BUG: without importing **mongoose** in controllers/posts.js and without updating **{ ...post, _id }**
 
 - Wait, a small delay about several seconds
-# TIPS : Console log error instead of error.message to get more information  
+## TIPS : Console log error instead of error.message to get more information  
 
 
 
-# STEP 13
+# STEP 21
+Implement DELETE Function
+In Posts/Post/Post.js -> DeleteIcon has nothing  
+So First: Backend (logic), Second Connect it to the Frontend.
+## In Server
+Create a new route in routes/posts.js
+Create a function GOTO controllers/posts.js   
+Then, we have the route and GOTO client (frontend) to initiate it  
+Implement api call in api/index.js  
+Create action creator in actions/posts.js  
+Create action.type in reducers/posts.js  
+Dispatch the action in Posts/Post/Post.js  
+BUG:
+>  Line 19:49:  Expected '===' and instead saw '=='                                     eqeqeq  
+
+
+>  Line 23:52:  Expected '!==' and instead saw '!='                                     eqeqeq
+
+
+OK NEXT BUG: 
+> 已拦截跨源请求：同源策略禁止读取位于 http://localhost:5000/posts/6236025efb49e99b6bd0859e 的远程资源。（原因：CORS 请求未能成功）。状态码：(null)。
+
+
+## In controllers/posts.js
+The problem is about the id !
+Implement LIKE Function
 
 #
-# STEP 13
+# STEP 22
+
 
 #
 # STEP 13

@@ -1,4 +1,3 @@
-import { CallToActionSharp } from "@material-ui/icons";
 
 // state is an array
 export default (posts = [], action) => {
@@ -16,7 +15,12 @@ export default (posts = [], action) => {
         case 'UPDATE': 
             // array.map() is an array 
             // a ternary expression
-            return posts.map((post) => post._id == action.payload._id ? action.payload : post);
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+        
+        case 'DELETE': 
+            // return all posts except the one we do not need 
+            // payload is an id
+            return posts.filter((post) => post._id !== action.payload);
              
         default:
             return posts;
