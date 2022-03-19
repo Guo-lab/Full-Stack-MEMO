@@ -360,19 +360,34 @@ OK NEXT BUG:
 ## In controllers/posts.js
 The problem is about the id !
 Implement LIKE Function
+Same order as DELETE
 
 #
 # STEP 22
+After some fixes to like `&nbsp;` , font size, `split(',')` in Form.js which makes #tag #tag   
+We turn to change the APP mobile friendly.  
+- Right click and click "inspect"
+- Toggle device toolbar
+- Change proper div, element.style -> `flex-direction: column-reverse`
+- Back to client/src/App.js to change it in the source file
+- Distinguish the mobile and the desktop APP with theme.breakpoints in /client/src/styles.js
 
 
 #
-# STEP 13
+# STEP 23
+- action constants
+- environmental variables
+    - Create file .env
+    - `npm i dotenv`
+    - `import dotenv`
+    - `dotenv.config();`
+- deployment
+    - Deploy local backend to live deployed API (Heroku)
+    - Deploy the client side (netlify.com)
+        - `npm run build`
+Click THIS :
+> https://www.youtube.com/watch?v=aibtHnbeuio
 
-#
-# STEP 13
-
-#
-# STEP 13
 
 
 

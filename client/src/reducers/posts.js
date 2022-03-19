@@ -16,7 +16,9 @@ export default (posts = [], action) => {
             // array.map() is an array 
             // a ternary expression
             return posts.map((post) => post._id === action.payload._id ? action.payload : post);
-        
+        case 'LIKE': 
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+
         case 'DELETE': 
             // return all posts except the one we do not need 
             // payload is an id

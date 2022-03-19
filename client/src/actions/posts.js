@@ -66,6 +66,19 @@ export const updatePost = (id, post) => async (dispatch) => {
 // % have actions types set as constants and then import them  in these files
 // % √
 
+export const likePost = (id) => async (dispatch) => {
+    
+    try {
+        // just like it, without providing what we want to do with it
+        const { data } = await api.likePost(id);
+
+        dispatch({ type: 'LIKE', payload: data });
+        // Then, GOTO reducers to fix type !
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 
